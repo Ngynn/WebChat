@@ -1,0 +1,15 @@
+#parent {
+    display: grid;
+    grid-template-columns: minmax(150px, 25%) 1fr;
+    height: 100vh;
+}
+
+#list-friend {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+#chat-box {
+    display: grid;
+    grid-template-rows: 1fr auto;
+}

@@ -1,0 +1,16 @@
+#userParent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+
+.box {
+    flex: 1 1 50px; /*  Stretching: */
+}
+
+img {
+    border-radius: 50px;
+}
