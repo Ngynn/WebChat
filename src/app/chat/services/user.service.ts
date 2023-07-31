@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth, onAuthStateChanged, user } from '@angular/fire/auth';
+import { Auth, onAuthStateChanged, signOut } from '@angular/fire/auth';
 import { BehaviorSubject } from 'rxjs';
 import { UserInfo } from 'src/app/models/user-info';
 
@@ -8,17 +8,33 @@ import { UserInfo } from 'src/app/models/user-info';
 })
 export class UserService {
 
-  userInfo: BehaviorSubject<UserInfo|null> = new BehaviorSubject(null);
+  userInfo: BehaviorSubject<UserInfo|null>;
 
   constructor(private auth: Auth) {
+    this.userInfo = new BehaviorSubject<UserInfo | null>({
+      id: '001',
+      name: 'Long',
+      email: 'long@gmail.com',
+      avatarUrl:'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50',
+    } as UserInfo);
     onAuthStateChanged(this.auth, (user) =>{
       console.log(user);
       if(user) {
-        this.userInfo.next
-      }
-      
+        this.userInfo.next({
+          id: user.uid,
+          name: user.displayName,
+          email: user.email,
+          avatarUrl: user.photoURL,
+        }as UserInfo);
+      } else {
+        this.userInfo.next(null);
+      } 
     },(error) => {
       console.log(error);
     });
+   }
+
+   async logout() {
+    await signOut(this.auth);
    }
 }

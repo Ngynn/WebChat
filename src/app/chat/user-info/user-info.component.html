@@ -1,13 +1,14 @@
 <div id="userParent">
     <div id="avatarPanel" class="box">
-        <img id="avatar" [src]="user.avatarUrl">
+        <img id="avatar" [src]="user?.avatarUrl??''">
     </div>
     <div id="infoPanel" class="box">
-        <div id="id">{{user.id}}</div>
-        <div id="name">{{user.name}}</div>
-        <div id="email">{{user.email}}</div>
+        <!-- <div id="id">{{user?.id??''}}</div> -->
+        <div id="name">{{user?.name??''}}</div>
+        <div id="email">{{user?.email??''}}</div>
     </div>
     <div id="actionPanel" class="box">
-        <button>Add friend</button>
+        <img (click)="addFriend()" src="https://cdn-icons-png.flaticon.com/512/6911/6911758.png" alt="" style="width: 2rem; height: 2rem;">
+        <img (click)="userService.logout()" src="https://cdn-icons-png.flaticon.com/512/159/159707.png" alt="" style="width: 2rem; height: 2rem;">
     </div>
 </div>

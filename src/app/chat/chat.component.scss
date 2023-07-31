@@ -1,15 +1,20 @@
-#parent {
+#chatParent {
     display: grid;
     grid-template-columns: minmax(150px, 25%) 1fr;
     height: 100vh;
+    width: 100vw;
 }
 
 #list-friend {
     display: grid;
     grid-template-rows: auto 1fr auto;
+
+
 }
 
-#chat-box {
+#chatBox {
     display: grid;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: 3.4rem 1fr 3.5rem;
+
 }
+

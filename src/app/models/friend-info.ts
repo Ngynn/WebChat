@@ -1,4 +1,4 @@
-export interface UserInfo {
+export interface FriendInfo {
     id: string;
     name: string;
     email: string;

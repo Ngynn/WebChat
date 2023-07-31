@@ -1,18 +1,22 @@
-<div id="parent">
-    <div id="list-friend">
-        <div id="info" style="background-color: bisque; height: 70px;">
-            <app-user-info></app-user-info>
+<div id="chatParent">
+    <div id="list-friend" style="border-right: solid; border-color: rgb(0, 0, 0); border-width: 1.5px;">
+        <div id="info" style="background-color: whitesmoke; ">
+            <app-user-info [user]="(userService.userInfo|async)"></app-user-info>
         </div>
-        <div id="friend" style="background-color: brown;">
-            <app-friend-list></app-friend-list>
+        <div id="friend" style=" background-color: rgb(255, 255, 255); border-right: solid; border-color: grey; border-width: 1.5px;">
+            <app-friend-list (selectedFriend)="selectFriend($event)"></app-friend-list>
         </div>
     </div>
-    <div id="chat-box">
-        <div id="chatting" style="background-color: chocolate;">
-            <app-chat-box></app-chat-box>
+    <div id="chatBox">
+        <div style="background-color: #ffffff;">
+            <app-navbar [user]="(userService.userInfo|async)">
+            </app-navbar>
         </div>
-        <div id="chattype" style="background-color: cadetblue;">
-            <app-chat-control></app-chat-control>
+        <div id="chatControlHeader" style="background-color: #ffffff; border-top: solid; border-color: rgb(0, 0, 0); border-width: 1.3px;" >
+            <app-chat-box [_friendship]="friendship"></app-chat-box>
+        </div>
+        <div id="chatControlPanel" style="border-top: solid; border-color: rgb(0, 0, 0); border-width: 1.5px;">
+            <app-chat-control [friendship]="friendship"></app-chat-control>
         </div>
     </div>
 </div>

@@ -1,0 +1,24 @@
+
+
+
+#avatar {
+    border-radius:50%;
+    width: 50px;
+}
+
+#navName {
+    justify-content: center;
+}
+
+#btn {
+    display: flex;
+    
+    justify-content: right;
+    img {
+        width: 2rem;
+        height: 2rem;
+        margin: 10px;
+    }
+    margin: auto;
+    
+}

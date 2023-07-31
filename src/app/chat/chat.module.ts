@@ -7,6 +7,9 @@ import { UserInfoComponent } from './user-info/user-info.component';
 import { FriendListComponent } from './friend-list/friend-list.component';
 import { ChatControlComponent } from './chat-control/chat-control.component';
 import { ChatBoxComponent } from './chat-box/chat-box.component';
+import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
+
 
 
 @NgModule({
@@ -15,11 +18,13 @@ import { ChatBoxComponent } from './chat-box/chat-box.component';
     UserInfoComponent,
     FriendListComponent,
     ChatControlComponent,
-    ChatBoxComponent
+    ChatBoxComponent,
+    NavbarComponent
   ],
   imports: [
     CommonModule,
-    ChatRoutingModule
+    ChatRoutingModule,
+    FormsModule
   ]
 })
 export class ChatModule { }

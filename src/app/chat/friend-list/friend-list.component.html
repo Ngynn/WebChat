@@ -1,1 +1,10 @@
-<p>friend-list works!</p>
+<div style="background-color: transparent; " >
+  <div *ngFor="let friendship of friendList">
+    <div id="list">
+        <div id="n-list" style="width: 100%; border-style: solid; border-width: 1px;" (click)="chatWith(friendship)">
+            {{friendship.friendEmail}}
+        </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+
+
+#m-email {
+    span {
+        color: white;
+        background-color: rgb(0, 132, 255);
+        margin: 20px;
+    }
+    flex: 1;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 15px;
+    margin-top: 1rem;
+}
+#f-email {
+    span {
+        color: white;
+        margin: 20px;
+        background-color: #3e4042;
+    }
+    flex: 1;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: left;
+    margin-left: 15px;
+
+    
+}
+
+#outer {
+    display: flex;
+}
+
+#inner {
+    background-color: rgb(0, 132, 255);
+    border-radius: 15px;
+    text-align: center;
+    height: 30px;
+}
+
+#inner1 {
+    background-color: #3e4042;
+    border-radius: 15px;
+    text-align: center;
+    height: 30px;
+}
+
+
+#bubble {
+    margin: auto;
+    text-align: center;
+}
+
+

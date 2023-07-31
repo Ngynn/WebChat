@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { UserService } from '../services/user.service';
+import { Message } from 'src/app/models/message';
+import { FriendShip } from 'src/app/models/friendship';
+import { MessageService } from '../services/message.service';
 
 @Component({
   selector: 'app-chat-control',
@@ -6,5 +10,35 @@ import { Component } from '@angular/core';
   styleUrls: ['./chat-control.component.scss']
 })
 export class ChatControlComponent {
+  message = "";
 
+  @Input() friendship: FriendShip | null = null;
+
+  myEmail = "";
+
+  constructor(
+    private userService: UserService,
+    private messageService: MessageService
+  ) {
+    this.userService.userInfo.subscribe((user) => {
+      this.myEmail = user?.email ?? "";
+    });
+  }
+
+  async send() {
+    if (this.message == "") {
+      return;
+    }
+    if (this.myEmail == "") {
+      return;
+    }
+    await this.messageService.send(this.friendship?.conversationId ?? "", <
+      Message
+    >{
+      senderEmail: this.myEmail,
+      content: this.message,
+      timestamp: 0,
+      receiverEmail: this.friendship?.friendEmail ?? "",
+    });
+  }
 }

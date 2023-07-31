@@ -1,1 +1,11 @@
-<p>chat-control works!</p>
+<div id="chat" style="background-color: #ffffff">
+  <input style="width: 80%;" [(ngModel)]="message" placeholder="Aa" />
+  <div id="imgBtn">
+    <img style="width: 2rem;"
+    (click)="send()"
+    src="https://cdn-icons-png.flaticon.com/512/9333/9333991.png"
+    alt=""
+  />
+  </div>
+  
+</div>
